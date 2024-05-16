@@ -53,7 +53,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('guru.index') }}" class="nav-link" id="DataGuru">
                                     <i class="fas fa-users nav-icon"></i>
-                                    <p>Data Guru</p>
+                                    <p>Data Dosen</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -65,13 +65,13 @@
                             <li class="nav-item">
                                 <a href="{{ route('siswa.index') }}" class="nav-link" id="DataSiswa">
                                     <i class="fas fa-users nav-icon"></i>
-                                    <p>Data Siswa</p>
+                                    <p>Data Mahasiswa</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('mapel.index') }}" class="nav-link" id="DataMapel">
                                     <i class="fas fa-book nav-icon"></i>
-                                    <p>Data Mapel</p>
+                                    <p>Data Mata Kuliah</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -101,7 +101,7 @@
                                 <li class="nav-item">
                                     <a href="{{ route('guru.trash') }}" class="nav-link" id="TrashGuru">
                                         <i class="fas fa-users nav-icon"></i>
-                                        <p>Trash Guru</p>
+                                        <p>Trash Dosen</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -113,13 +113,13 @@
                                 <li class="nav-item">
                                     <a href="{{ route('siswa.trash') }}" class="nav-link" id="TrashSiswa">
                                         <i class="fas fa-users nav-icon"></i>
-                                        <p>Trash Siswa</p>
+                                        <p>Trash Mahasiswa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('mapel.trash') }}" class="nav-link" id="TrashMapel">
                                         <i class="fas fa-book nav-icon"></i>
-                                        <p>Trash Mapel</p>
+                                        <p>Trash Mata Kuliah</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -135,7 +135,7 @@
                     <li class="nav-item">
                         <a href="{{ route('guru.absensi') }}" class="nav-link" id="AbsensiGuru">
                             <i class="fas fa-calendar-check nav-icon"></i>
-                            <p>Absensi Guru</p>
+                            <p>Absensi Dosen</p>
                         </a>
                     </li>
                     <li class="nav-item has-treeview" id="liNilai">
@@ -162,7 +162,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('rapot-kelas') }}" class="nav-link" id="Rapot">
                                     <i class="fas fa-file-alt nav-icon"></i>
-                                    <p>Nilai Rapot</p>
+                                    <p>Nilai Transkrips</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -210,7 +210,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('ulangan.index') }}" class="nav-link" id="UlanganGuru">
                                     <i class="fas fa-file-alt nav-icon"></i>
-                                    <p>Entry Nilai Ulangan</p>
+                                    <p>Entry Nilai Ujian</p>
                                 </a>
                             </li>
                             @if (
