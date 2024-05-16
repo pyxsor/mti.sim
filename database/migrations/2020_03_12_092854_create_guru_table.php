@@ -20,11 +20,12 @@ class CreateGuruTable extends Migration
             $table->string('nama_guru', 50);
             $table->integer('mapel_id');
             $table->string('kode', 5)->nullable();
+            // $table->string('jk');
             $table->enum('jk', ['L', 'P']);
             $table->string('telp', 15)->nullable();
             $table->string('tmp_lahir', 50)->nullable();
             $table->date('tgl_lahir')->nullable();
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
