@@ -69,8 +69,8 @@
                     <option value="">-- Select {{ __('Level User') }} --</option>
                     <option value="Admin">Admin</option>
                     <option value="Operator">Operator</option>
-                    <option value="Guru">Guru</option>
-                    <option value="Siswa">Siswa</option>
+                    <option value="Guru">Dosen</option>
+                    <option value="Siswa">Mahasiswa</option>
                   </select>
                   @error('role')
                     <span class="invalid-feedback" role="alert">
@@ -118,7 +118,7 @@
             if (kel == "Guru") {
               $("#noId").html('<label for="nomer">Nomer Id Card</label><input id="nomer" type="text" maxlength="5" onkeypress="return inputAngka(event)" placeholder="No Id Card" class="form-control" name="nomer" autocomplete="off">');
             } else if(kel == "Siswa") {
-              $("#noId").html(`<label for="nomer">Nomer Induk Siswa</label><input id="nomer" type="text" placeholder="No Induk Siswa" class="form-control" name="nomer" autocomplete="off">`);
+              $("#noId").html(`<label for="nomer">Nomer Induk Mahasiswa</label><input id="nomer" type="text" placeholder="No Induk Mahasiswa" class="form-control" name="nomer" autocomplete="off">`);
             } else if(kel == "Admin" || kel == "Operator") {
               $("#noId").html(`<label for="name">Username</label><input id="name" type="text" placeholder="Username" class="form-control" name="name" autocomplete="off">`);
             } else {
