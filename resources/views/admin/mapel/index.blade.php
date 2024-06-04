@@ -22,6 +22,9 @@
                     <th>Nama Mapel</th>
                     <th>Paket</th>
                     <th>Kelompok</th>
+                    <th>Jumlah SKS</th>
+                    <th>Semester</th>
+                    <th>Tahun</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -36,6 +39,9 @@
                       <td>{{ $data->paket->ket }}</td>
                     @endif
                     <td>{{ $data->kelompok }}</td>
+                    <td>{{ $data->sks }}</td>
+                    <td>{{ $data->semester }}</td>
+                    <td>{{ $data->tahun }}</td>
                     <td>
                         <form action="{{ route('mapel.destroy', $data->id) }}" method="post">
                             @csrf
@@ -92,6 +98,18 @@
                       <option value="B">Pelajaran Khusus</option>
                       <option value="C">Pelajaran Keahlian</option>
                     </select>
+                </div>
+                <div class="form-group">
+                  <label for="nama_mapel">Jumlah SKS</label>
+                  <input type="number" id="sks" name="sks" class="form-control @error('sks') is-invalid @enderror" placeholder="{{ __('sks') }}">
+                </div>
+                <div class="form-group">
+                  <label for="nama_mapel">Semester</label>
+                  <input type="text" id="semester" name="semester" class="form-control @error('semester') is-invalid @enderror" placeholder="{{ __('semester') }}">
+                </div>
+                <div class="form-group">
+                  <label for="nama_mapel">Tahun</label>
+                  <input type="date" id="tahun" name="tahun" class="form-control @error('tahun') is-invalid @enderror" placeholder="{{ __('tahun') }}">
                 </div>
               </div>
             </div>
