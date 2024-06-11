@@ -64,41 +64,62 @@ class PaketSeeder extends Seeder
 
         DB::table('mapel')->insert([
             'id' => 1,
+            'kode_mk'=>'IND',
             'nama_mapel' => 'Bahasa Indonesia',
-            'paket_id' => '9',
-            'kelompok' => 'A',
+            'jenis_mk' => 'wajib',
+            // 'kelompok' => 'A',
+            'sks'=>'3',
+            'semester'=>'2',
+            'tahun' => date('Y-m-d H:i:s'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('mapel')->insert([
             'id' => 2,
+            'kode_mk'=>'ENG',
             'nama_mapel' => 'Bahasa Inggris',
-            'paket_id' => '9',
-            'kelompok' => 'A',
+            'jenis_mk' => 'wajib',
+            // 'kelompok' => 'A',
+            'sks'=>'3',
+            'semester'=>'2',
+            'tahun' => date('Y-m-d H:i:s'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('mapel')->insert([
             'id' => 3,
+            'kode_mk'=>'MTK',
             'nama_mapel' => 'Matematika',
-            'paket_id' => '9',
-            'kelompok' => 'A',
+            'jenis_mk' => 'wajib',
+            // 'kelompok' => 'A',
+            'sks'=>'3',
+            'semester'=>'2',
+            'tahun' => date('Y-m-d H:i:s'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('mapel')->insert([
             'id' => 4,
+            'kode_mk'=>'AGM',
             'nama_mapel' => 'Pendidikan Agama dan Budi Pekerti',
-            'paket_id' => '9',
-            'kelompok' => 'A',
+            'jenis_mk' => 'pilihan',
+            // 'kelompok' => 'A',
+            'sks'=>'3',
+            'semester'=>'2',
+            'tahun' => date('Y-m-d H:i:s'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('mapel')->insert([
             'id' => 5,
+            'kode_mk'=>'PKN',
+            'jenis_mk' => 'pilihan',
             'nama_mapel' => 'Pendidikan Pancasila dan Kewarganegaraan',
-            'paket_id' => '9',
-            'kelompok' => 'A',
+            'jenis_mk' => 'pilihan',
+            // 'kelompok' => 'A',
+            'sks'=>'3',
+            'semester'=>'2',
+            'tahun' => date('Y-m-d H:i:s'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

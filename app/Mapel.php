@@ -2,15 +2,17 @@
 
 namespace App;
 
-use Auth;
+// use Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
+
 
 class Mapel extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['id', 'nama_mapel', 'paket_id', 'kelompok', 'sks', 'semester', 'tahun'];
+    protected $fillable = ['id', 'kode_mk', 'nama_mapel', 'jenis_mk', 'sks', 'semester', 'tahun'];
 
     public function paket()
     {
