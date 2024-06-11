@@ -15,9 +15,14 @@ class CreateMapelTable extends Migration
     {
         Schema::create('mapel', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('kode_mk',10);
             $table->string('nama_mapel', 50);
-            $table->integer('paket_id');
-            $table->enum('kelompok', ['A', 'B', 'C']);
+            $table->enum('jenis_mk',['wajib','pilihan']);
+            // $table->integer('paket_id');
+            // $table->enum('kelompok', ['A', 'B', 'C']);
+            $table->integer('sks')->nullable();
+            $table->integer('semester')->nullable();
+            $table->date('tahun')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

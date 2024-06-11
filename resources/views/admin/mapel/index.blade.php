@@ -19,9 +19,12 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nama Mapel</th>
-                    <th>Paket</th>
-                    <th>Kelompok</th>
+                    <th>Kode Mata Kuliah</th>
+                    <th>Nama Mata Kuliah</th>
+                    <th>Jenis Mata Kuliah</th>
+                    <th>Jumlah SKS</th>
+                    <th>Semester</th>
+                    <th>Tahun</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -29,13 +32,17 @@
                 @foreach ($mapel as $result => $data)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
+                    <td>{{ $data->kode_mk }}</td>
                     <td>{{ $data->nama_mapel }}</td>
-                    @if ( $data->paket_id == 9 )
+                    <!-- @if ( $data->paket_id == 9 )
                       <td>{{ 'Semua' }}</td>
                     @else
                       <td>{{ $data->paket->ket }}</td>
-                    @endif
-                    <td>{{ $data->kelompok }}</td>
+                    @endif -->
+                    <td>{{ $data->jenis_mk }}</td>
+                    <td>{{ $data->sks }}</td>
+                    <td>{{ $data->semester }}</td>
+                    <td>{{ $data->tahun }}</td>
                     <td>
                         <form action="{{ route('mapel.destroy', $data->id) }}" method="post">
                             @csrf
@@ -66,15 +73,19 @@
         </button>
     </div>
     <div class="modal-body">
-        <form action="{{ route('mapel.store') }}" method="post">
+      <form action="{{ route('mapel.store') }}" method="post">
           @csrf
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="nama_mapel">Nama Mapel</label>
-                  <input type="text" id="nama_mapel" name="nama_mapel" class="form-control @error('nama_mapel') is-invalid @enderror" placeholder="{{ __('Nama Mata Pelajaran') }}">
+                  <label for="nama_mapel">Kode Mata Kuliah</label>
+                  <input type="text" id="kode_mk" name="kode_mk" class="form-control @error('nama_mapel') is-invalid @enderror" placeholder="{{ __('Nama Mata Pelajaran') }}">
                 </div>
                 <div class="form-group">
+                  <label for="nama_mapel">Nama Mata Kuliah</label>
+                  <input type="text" id="nama_mapel" name="nama_mapel" class="form-control @error('nama_mapel') is-invalid @enderror" placeholder="{{ __('Nama Mata Pelajaran') }}">
+                </div>
+                <!-- <div class="form-group">
                   <label for="paket_id">Paket</label>
                   <select id="paket_id" name="paket_id" class="form-control @error('paket_id') is-invalid @enderror select2bs4">
                     <option value="">-- Pilih Paket Mapel --</option>
@@ -83,15 +94,27 @@
                       <option value="{{ $data->id }}">{{ $data->ket }}</option>
                     @endforeach
                   </select>
+                </div> -->
+                <div class="form-group">
+                    <label for="jenis_mk">Kelompok</label>
+                    <select id="jenis_mk" name="jenis_mk" class="select2bs4 form-control @error('kelompok') is-invalid @enderror">
+                      <option value="">-- Pilih Kelompok Mapel --</option>
+                      <option value="Wajib">Mata Kuliah Wajib</option>
+                      <option value="pilihan">Mata Kuliah Pilihan</option>
+                      <!-- <option value="C">Pelajaran Keahlian</option> -->
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="kelompok">Kelompok</label>
-                    <select id="kelompok" name="kelompok" class="select2bs4 form-control @error('kelompok') is-invalid @enderror">
-                      <option value="">-- Pilih Kelompok Mapel --</option>
-                      <option value="A">Pelajaran Umum</option>
-                      <option value="B">Pelajaran Khusus</option>
-                      <option value="C">Pelajaran Keahlian</option>
-                    </select>
+                  <label for="nama_mapel">Jumlah SKS</label>
+                  <input type="number" id="sks" name="sks" class="form-control @error('sks') is-invalid @enderror" placeholder="{{ __('sks') }}">
+                </div>
+                <div class="form-group">
+                  <label for="nama_mapel">Semester</label>
+                  <input type="text" id="semester" name="semester" class="form-control @error('semester') is-invalid @enderror" placeholder="{{ __('semester') }}">
+                </div>
+                <div class="form-group">
+                  <label for="nama_mapel">Tahun</label>
+                  <input type="date" id="tahun" name="tahun" class="form-control @error('tahun') is-invalid @enderror" placeholder="{{ __('tahun') }}">
                 </div>
               </div>
             </div>
@@ -99,8 +122,8 @@
         <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
             <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i> &nbsp; Tambahkan</button>
-        </form>
-    </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

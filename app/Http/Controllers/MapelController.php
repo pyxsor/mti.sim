@@ -19,7 +19,7 @@ class MapelController extends Controller
      */
     public function index()
     {
-        $mapel = Mapel::OrderBy('kelompok', 'asc')->OrderBy('nama_mapel', 'asc')->get();
+        $mapel = Mapel::OrderBy('jenis_mk', 'asc')->OrderBy('nama_mapel', 'asc')->get();
         $paket = Paket::all();
         return view('admin.mapel.index', compact('mapel', 'paket'));
     }
@@ -43,9 +43,12 @@ class MapelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'kode_mk' => 'required',
             'nama_mapel' => 'required',
-            'paket_id' => 'required',
-            'kelompok' => 'required'
+            'jenis_mk' => 'required',
+            'sks' => 'required',
+            'semester' => 'required',
+            'tahun' => 'required',
         ]);
 
         Mapel::updateOrCreate(
@@ -53,9 +56,13 @@ class MapelController extends Controller
                 'id' => $request->mapel_id
             ],
             [
+                'kode_mk' => $request->kode_mk,
                 'nama_mapel' => $request->nama_mapel,
-                'paket_id' => $request->paket_id,
-                'kelompok' => $request->kelompok,
+                'jenis_mk' => $request->jenis_mk,
+                'sks'=>$request->sks,
+                'semester'=>$request->semester,
+                'tahun'=>$request->tahun,
+
             ]
         );
 
